@@ -40,7 +40,7 @@ var app =
     .config(['$controllerProvider', '$compileProvider', '$filterProvider', '$provide','appConfig', 'LightboxProvider',
         function($controllerProvider, $compileProvider, $filterProvider, $provide, appConfig, LightboxProvider) {
             // set a custom template
-            LightboxProvider.templateUrl = 'tpl/default/galery-lightbox.html';
+            LightboxProvider.templateUrl = '@@domainProject/tpl/default/galery-lightbox.html';
 
             // lazy controller, directive and service
             app.controller = $controllerProvider.register;

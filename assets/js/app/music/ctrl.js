@@ -15,34 +15,34 @@ app.controller('MusicCtrl', ['$sce', '$scope', '$ocLazyLoad', '$timeout', '$cook
         $scope.audios = [{
             title: 'Ya no quiero tu amor',
             artist: 'Yesy Milano',
-            poster: '@@renewDomainDevReal/img/music/cover1.jpg',
+            poster: '@@domainProject/img/music/cover1.jpg',
             download: 'http://yesymilano.com/mp3/?file=1',
             sources: [{
-                    src: $sce.trustAsResourceUrl('@@renewDomainDevReal/mp3/Yesy Milano - Ya no quiero.mp3'),
+                    src: $sce.trustAsResourceUrl('@@domainProject/mp3/Yesy Milano - Ya no quiero.mp3'),
                     type: 'audio/mpeg'
                 }]
                 // }, {
                 //     title: 'Cuidalo bien ft. Mario Reyes',
                 //     artist: 'Yesy Milando',
-                //     poster: '/@@renewDomainDevReal/img/music/cover2.jpg',
+                //     poster: '/@@domainProject/img/music/cover2.jpg',
                 //     sources: [{
-                //         src: $sce.trustAsResourceUrl('@@renewDomainDevReal/mp3/Beso Acido - Akapella.mp3'),
+                //         src: $sce.trustAsResourceUrl('@@domainProject/mp3/Beso Acido - Akapella.mp3'),
                 //         type: 'audio/mpeg'
                 //     }]
         }, {
             title: 'Perdóname ft. Roming',
             artist: 'Yesy Milano',
-            poster: '@@renewDomainDevReal/img/music/cover2.jpg',
+            poster: '@@domainProject/img/music/cover2.jpg',
             sources: [{
-                src: $sce.trustAsResourceUrl('@@renewDomainDevReal/mp3/Yesy Milano - Perdoname Feat. Roming.mp3'),
+                src: $sce.trustAsResourceUrl('@@domainProject/mp3/Yesy Milano - Perdoname Feat. Roming.mp3'),
                 type: 'audio/mpeg'
             }]
         }, {
             title: 'Mala falsa mala',
             artist: 'Yesy Milano',
-            poster: '@@renewDomainDevReal/img/music/cover3.jpg',
+            poster: '@@domainProject/img/music/cover3.jpg',
             sources: [{
-                src: $sce.trustAsResourceUrl('@@renewDomainDevReal/mp3/Yesy Milano - Mala falsa mala.mp3'),
+                src: $sce.trustAsResourceUrl('@@domainProject/mp3/Yesy Milano - Mala falsa mala.mp3'),
                 type: 'audio/mpeg'
             }]
         }];

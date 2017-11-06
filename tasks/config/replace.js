@@ -27,6 +27,9 @@ module.exports = function(grunt) {
                     match: 'renewDomainDevReal',
                     replacement: pipeline.renewDomain
                 }, {
+                    match: 'domainProject',
+                    replacement: pipeline.renewDomain + '/Yesy-Milano/'
+                }, {
                     match: 'renewLoader',
                     replacement: loader
                 }]
