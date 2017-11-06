@@ -1,0 +1,309 @@
+<div id="content" full-page options="mainOptions">
+    <div id="section1" class="section active" ng-style="{'background-image': 'url(/img/bg/'+mainOptions.anchors[0]+'.jpg)'}">
+        <div class="text-center h1 fade-in" ng-show="ready">
+            <img src="/img/music/yanoquiero.png">
+            <br />
+            <a href="http://yesymilano.com/mp3/?file=1" class="btn btn-primary">
+                Descarga <i class="fa fa-arrow-circle-o-down"></i>
+            </a>
+        </div>
+        <div class="arrow-down bounce"></div>
+    </div>
+    <div id="section2" class="section" ng-style="{'background-image': 'url(/img/bg/'+mainOptions.anchors[1]+'.jpg)'}">
+        <div class="container">
+            <div class="row m-t-xl" style="margin-bottom:200px;">
+                <div class="col-md-7">
+                    <div class="m-t-xxl">
+                        <h3 class="m-b-lg">YESY MILANO ARTISTA VENEZOLANA
+                            <hr class="pull-left absolute m-t-sm" style="width: 74px; border-color: #ff025d;border-width: 2px;" />
+                        </h3>
+                        <ul class="list-unstyled m-t-xl">
+                            <li class="text-justify" ui-appear="animated" data-animation="fadeInUp" data-delay="600">
+                                <span class="text-justify">
+                                Es una artista venezolana con gran proyección internacional, dentro de sus inicios formó parte de la grabación a beneficio del cáncer de Médula con la Organización <span class="text-primary">"Ciudad de la esperanza"</span> en los Ángeles, con participaciones especiales como la de Emilio Estefan, Gloria Estefan, Placido Domingo, Oscar de León, Luis Fonsi, David Bisbal, Enrique Iglesias, Tito el Bambino entre otros artistas de Latinoamerica. (2010)
+                                <br />
+                                <br /> También grabó un video dirigido por el reconocido cineasta Manolo Celi en Colombia a dúo con el actor mexicano Khotan Fernández el cual ya esta rotando en el reconocido canal de videos de latinoamerica Htv, con el tema titulado <span class="text-primary">"Dime que no"</span> con el conocido productor de mana José Pepe Quintana.(2010)
+                                <br />
+                                <br /> Tiene un tema titulado <span class="text-primary">"Cuídalo bien"</span> junto el gran exponente de la música gitana Mario Reyes de la familia de los Gipsy King en los Ángeles con el reconocido productor Juan Carlos Rodríguez. (2010)
+                                <br />
+                                <br /> Estuvo en el cierre de año junto a Univisión desde puerto Rico en el año (2010)
+                                <br />
+                                <br />
+                                </span>
+                                <a class="text-primary text-u-l text-lg" ng-hide="more" ng-click="more=true;">Ver más</a>
+                                <span class="inline text-justify" ng-show="more"> 
+                                    Representó a Venezuela en el desfile de los Ángeles celebrando el Bicentenario de México junto a grandes artistas como Antonio Banderas y Oscar de la Hoya con un millón de espectadores.(2010)
+                                    <br />
+                                    <br /> Participó en la apertura del off road Venezuela de la mano del grupo argentino Los Pericos. Realizó una gira de medios en la Isla del encanto y Miami con el tema titulado Dime que no.(2011)
+                                    <br />
+                                    <br />
+                                    Trabajó en la canción navidad de color junto a kiara, los Cadillac, Roque Valero, Calle Ciega, Mirla Catellanos entre otros artistas venezolanos en el 2011.
+                                    <br />
+                                    <br /> Grabó una canción a beneficio de los Guardianes Ambientales junto a Santoral en el 2012 para la campaña de preservación Ambiental.
+                                    <br />
+                                    <br /> Participó en la Colmena de la vida dando un concierto sin fines de lucro para su beneficio en el 2012.
+                                    <br />
+                                    <br /> Promocionó un tema de su Autoría titulado <span class="text-primary">"Mala falsa mala"</span> y producida por Alfredo Matheus el cual obtuvo proyección en Venezuela posicionándose en el record report, en Htv y América Latina. (2013-2014)
+                                <br />
+                                <br /> Para el año 2015 hizo su debut en la música latina con su tema <span class="text-primary">"Perdóname"</span> ft Roming Caldederon y producido por Arturo Cabrera, el cual ocupó los primeros lugares en las carteleras venezolanas y ecuatorianas, postulándose su videoclip en el Hot Ranking de Htv Latinoamerica.
+                                <br />
+                                <br /> Para el 2016 Yesy Milano tiene grandes sorpresas preparadas en su nueva producción discográfica producida por Reggi el Auténtico, en el cual tiene varias colaboraciones, dentro de su primer lanzamiento está el tema <span class="text-primary">"Ya no quiero tu amor"</span> el cual realza el feminismo y el valor que debe tener una mujer para terminar una relación en la que no caben tres.
+                                <br />
+                                <br />
+                                </span>
+                                <a class="text-primary inline text-u-l text-lg" ng-show="more" ng-click="more=false;">Ver menos</a>
+                                <div class="visible-md visible-lg" ng-show="more" style="margin-bottom:400px;"></div>
+                                <div class="visible-sm visible-xs" style="margin-bottom:100px;"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-5 visible-md visible-lg">
+                    <ul class="list-unstyled text-center m-t-xl">
+                        <img src="/img/cuadro.png" height="450px" />
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="section3" class="section" ng-style="{'background-image': 'url(/img/bg/'+mainOptions.anchors[2]+'.jpg)'}">
+        <div class="row m-t-xl">
+            <div class="col-md-10 col-md-offset-1 text-center">
+                <div class="col-md-6 col-sm-6">
+                    <div ng-controller="MusicCtrl" ng-include="playerTemplate">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="partners" ng-mouseenter="rotatingSet(true)" ng-mouseleave="rotatingSet(false)">
+            <div class="partners-wrap">
+                <ul id="partners-list">
+                    <li>
+                        <img ng-src="/img/social-media/iTunes.png" alt="iTunes">
+                    </li>
+                    <li>
+                        <img ng-src="/img/social-media/AmazonMP3.png" alt="Amazon MP3">
+                    </li>
+                    <li>
+                        <img ng-src="/img/social-media/Spotify.png" alt="Spotify">
+                    </li>
+                    <li>
+                        <img ng-src="/img/social-media/Rhapsody.png" alt="Rhapsody">
+                    </li>
+                    <li>
+                        <img ng-src="/img/social-media/Google-Play.png">
+                    </li>
+                    <li>
+                        <img ng-src="/img/social-media/Deezer.png">
+                    </li>
+                    <li>
+                        <img ng-src="/img/social-media/Rdio.png">
+                    </li>
+                    <li>
+                        <img ng-src="/img/social-media/Emusic.png">
+                    </li>
+                    <li>
+                        <img ng-src="/img/social-media/Simfy.png">
+                    </li>
+                    <li>
+                        <img ng-src="/img/social-media/LastFM.png">
+                    </li>
+                    <li>
+                        <img ng-src="/img/social-media/Shazam.png">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="section4" class="section" ng-style="{'background-image': 'url(/img/bg/'+mainOptions.anchors[3]+'.jpg)'}">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="m-t-xl m-b-xl text-center">
+                    <div ng-repeat="album in albums" class="inline wrapper-md">
+                        <a ng-click="openLightboxModal($index, 'galery')" class="inline no-hover">
+                            <span class="m-t-md m-l-lg absolute">{{album.title}}</span>
+                            <button class="m-l-lg btn btn-default text-primary no-radius font-bold absolute" style="margin-top: 176px;">VER FOTOS</button>
+                            <img ng-src="{{album.thumbUrl}}" height="210px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="section5" class="section" ng-style="{'background-image': 'url(/img/bg/'+mainOptions.anchors[4]+'.jpg)'}">
+        <div class="container">
+            <div class="row m-t-xl m-b-xxl">
+                <div class="col-sm-6 m-t-md text-center" ng-repeat="video in videos[0].images" ng-class="{'w-full' : videos[0].images.length==$index+1}">
+                    <a ng-click="openLightboxModal($index, 'videos')" class="inline">
+                        <img ng-src="{{video.thumbUrl}}" class="r-4x" width="60%" ng-if="videos[0].images.length==$index+1">
+                        <img ng-src="{{video.thumbUrl}}" class="r-4x" width="70%" ng-if="videos[0].images.length!=$index+1">
+                        <img ng-src="/img/play.png" class="absolute" style="margin: auto; position: absolute; top: 0; left: 0; bottom: 0; right: 0;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="section6" class="section" ng-style="{'background-image': 'url(/img/bg/'+mainOptions.anchors[5]+'.jpg)'}">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+                <div class="m-t-xxl m-b-xxl padder-v text-center">
+                    <h3>Muy pronto disfrutaras de Yesy Milano.</h3>
+                    <!-- <table class="table m-b-none">
+                        <thead>
+                            <tr>
+                                <td class="text-primary">CIUDAD</td>
+                                <td class="text-primary">FECHA</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>16-05-16</td>
+                                <td>Barquisimento</td>
+                            </tr>
+                            <tr>
+                                <td>06-07-16</td>
+                                <td>Zulia</td>
+                            </tr>
+                            <tr>
+                                <td>05-10-16</td>
+                                <td>Maracay</td>
+                            </tr>
+                            <tr>
+                                <td>24-11-16</td>
+                                <td>Caracas</td>
+                            </tr>
+                            <tr>
+                                <td>03-01-17</td>
+                                <td>Merida</td>
+                            </tr>
+                            <tr>
+                                <td>14-03-17</td>
+                                <td>Valencia</td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+                </div>
+                <!-- <div class="m-t-xl m-b-xl text-center wrapper">
+                    <img src="/img/tours/logos.png" width="100%">
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div id="section7" class="section" ng-style="{'background-image': 'url(/img/bg/'+mainOptions.anchors[6]+'.jpg)'}">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-2 col-sm-5 col-sm-offset-1 col-xs-10 col-xs-offset-1 m-t-xl m-b-xxl padder-v">
+                <div class="m-t-sm">
+                    <h1>
+                        Contacto
+                    </h1>
+                    <div ng-show="response">
+                        <uib-alert ng-show="response.success" type="success">{{response.success}}</uib-alert>
+                        <uib-alert ng-show="response.error" type="danger">{{response.error}}</uib-alert>
+                    </div>
+                    <form name="form" class="form-validation" ng-hide="response.success" ng-submit="submit()">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="name" ng-model="contact.name" ng-pattern="/^[a-zA-Z0-9]{4,10}$/" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" ng-model="contact.email" ng-pattern="/^[_a-z_A-Z0-9]+(\.[_a-z_A-Z0-9]+)*@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*(\.[a-zA-Z]{2,4})$/" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mensaje</label>
+                            <textarea ng-model="message" ng-minlength="30" ng-change="change(message)" class="form-control" style="overflow:scroll;height:130px;max-height:130px" required>
+                            </textarea>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-default text-black no-radius font-bold" ng-disabled="form.$invalid || sending">Enviar</button>
+                        </div>
+                        <div class="form-group text-center">
+                            <h3>
+                                Manager - Douglas Teran
+                            </h3>
+                            <h5>
+                            {{contact.message}}
+                                +58 424 518 17 60 / +58 424 522 14 51
+                            </h5>
+                        </div>
+                    </form>
+                    <!-- <h3 class="text-muted l-h-1x">Duis quis malesuada tellus</h3>
+                    <h3 class="text-muted l-h-1x">Duis quis malesuada tellus</h3>
+                    <h3 class="text-muted l-h-1x">Duis quis malesuada tellus</h3> -->
+                </div>
+                <!-- <p class="text-center m-b-xxl wrapper">
+                    <a href="" target="_BLANK" class="btn b-2x btn-lg b-black btn-default btn-rounded text-lg font-bold m-b-xxl animated fadeInUpBig">Have it only $21</a>
+                </p> -->
+            </div>
+        </div>
+        <div id="partners">
+            <div class="partners-wrap bg-black-opacity text-center padder-lg wrapper-sm">
+                <div class="text-center">
+                    <span class="inline" style="transform: translate(0, 18px);">DEVELOPED BY&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp; </span>
+                    <a href="http://instagram.com/renew_cs/" target="_BLANK">
+                        <img class="blink absolute inline" height="60px" style="margin-left:16px;" src="/img/renew-isotipo.png" />
+                        <img height="60px" src="/img/renew-logo.png" />
+                    </a>
+                    <!-- <a href="http://instagram.com/renewsc/" target="_BLANK">
+                        <img class="blink inline" height="60px" src="/img/renew-isotipo.png" />
+                    </a> -->
+                </div>
+                <!-- <span class="text-primary">DEVELOPED BY</span> <a class="text-gray no-hover" href="http://facebook.com/jonlovmusic" target="_BLANK">JONATHAN LOVERA</a> | <span class="text-primary">DESIGNED BY</span> <a class="text-gray no-hover" href="http://instagram.com/gustavochourio/" target="_BLANK">GUSTAVO CHOURIO</a> -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<!-- <footer id="footer">
+    <div class="bg-info">
+        <div class="container">
+            <div class="row m-t-xl m-b-xl">
+                <div class="col-sm-6 text-center">
+                    <h4 class="m-b">Are you ready to enjoy?</h4>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <a ui-sref="access.signup" class="btn btn-lg btn-default btn-rounded">Start Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-white">
+        <div class="container">
+            <div class="row m-t-xl m-b-xl">
+                <div class="col-sm-3">
+                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">Find</span> Us</h4>
+                    <p class="text-sm">23 donec aliquet
+                        <br> 120002 Scelerisque Pellentesque
+                        <br> +64 555 555 555
+                    </p>
+                    <p>Sale: <a href="mailto:hey@example.com">info@{{app.shortName}}.com</a></p>
+                    <p class="m-b-xl">Job: <a href="mailto:hey@example.com">admin@{{app.shortName}}.com</a></p>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="text-u-c m-b-xl font-thin"><span class="b-b b-dark font-bold">Follow</span> Us</h4>
+                    <div class="m-b-xl">
+                        <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-google-plus"></i></a>
+                        <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-linkedin"></i></a>
+                        <a href="#" class="btn btn-icon btn-rounded btn-dark"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <h4 class="text-u-c m-b font-thin"><span class="b-b b-dark font-bold">News</span> Letter</h4>
+                    <p>Do not want to miss anything? Subscribe to our newsletter box</p>
+                    <form class="form-inline m-t m-b text-center m-b-xl">
+                        <div class="aside-xl inline">
+                            <div class="input-group">
+                                <input type="text" id="address" name="address" class="form-control btn-rounded" placeholder="Your email">
+                                <span class="input-group-btn">
+                  <button class="btn btn-default btn-rounded" type="submit">Subscribe</button>
+                </span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer> -->

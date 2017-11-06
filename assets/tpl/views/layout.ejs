@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+  <head>
+    <meta charset="utf-8" />
+    <title>Yesy Milano</title>
+
+    <link rel="icon" href="/favicon.ico?YM" />
+    
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Google -->
+    <meta name="description" content="Cantautora venezolana Contacto : 00 58 424 518 17 60 Manager Douglas Teran milanoyesy@hotmail.com @YesyMilano" />
+    <meta name="keywords" content="yesy, milano, cantante, autora, music, pop, balada, rock" />
+    
+    <!-- +Google -->
+    <meta itemprop="name" content="Yesy Milano">
+    <meta itemprop="description" content="Cantautora venezolana Contacto : 00 58 424 518 17 60 Manager Douglas Teran milanoyesy@hotmail.com @YesyMilano">
+    <meta itemprop="image" content="http://yesymilano.com/img/logoSM.png">
+
+    <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type": "Organization",
+      "url": "http://yesymilano.com",
+      "name" : "Yesy Milano",
+      "logo": "http://yesymilano.com/img/logoSM.png",
+      "sameAs" : [
+        "https://www.facebook.com/Yesy-Milano-105615746162876/?fref=ts",
+        "https://twitter.com/YESYMILANO"
+      ]
+    }
+    </script>
+
+    <!-- Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://yesymilano.com" />
+    <meta property="og:title" content="Yesy Milano" />
+    <meta property="og:description" content="Cantautora venezolana Contacto : 00 58 424 518 17 60 Manager Douglas Teran milanoyesy@hotmail.com @YesyMilano" />
+    <meta property="og:image" content="http://yesymilano.com/img/logoSM.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@YesyMilano" />
+    <meta name="twitter:title" content="Yesy Milano" />
+    <meta name="twitter:description" content="Cantautora venezolana Contacto : 00 58 424 518 17 60 Manager Douglas Teran milanoyesy@hotmail.com @YesyMilano" />
+    <meta name="twitter:image" content="http://yesymilano.com/img/logoSM.png" />
+
+    <% if (status && status == 200) { %>
+        <!--STYLES-->
+        <!--STYLES END-->
+    <% } %>
+    <!--  
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage 
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+        
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+            
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <!--STYLES-->
+    
+    <!--STYLES END-->
+  </head>
+  <body ng-controller="AppCtrl">
+    <%- body %>
+
+    <% if (status && status == 200) { %>
+      <!--SCRIPTS-->
+      <!--SCRIPTS END-->
+    <%}%>
+  </body>
+</html>
