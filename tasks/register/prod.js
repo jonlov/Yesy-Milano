@@ -1,16 +1,47 @@
 module.exports = function (grunt) {
+    grunt.config.set('pkg', grunt.file.readJSON('package.json'));
+	
 	grunt.registerTask('prod', [
 		'compileAssetsProd',
-		'concat',
+        'concat:js',
+        'concat:css',
+
 		'replace:prod',
-		'uglify',
-		'cssmin',
-		'sails-linker:prodJs',
-		'sails-linker:prodStyles',
-		'sails-linker:devTpl',
-		'sails-linker:prodJsJade',
-		'sails-linker:prodStylesJade',
-		'sails-linker:devTplJade',
-		'htmlmin'
+
+        'uglify:dist',
+        'concat:renew',
+        'concat:renewToProd',
+        'clean:renew',
+        'cssmin',
+        'linkAssetsBuildProd',
+        'htmlmin',
+        // 'phpmin'
 	]);
 };
+
+// module.exports = function(grunt) {
+//     grunt.config.set('pkg', grunt.file.readJSON('package.json'));
+//
+//     grunt.registerTask('prod', [
+//         'compileAssetsProd',
+//         'concat:js',
+//         'concat:css',
+//
+//         'replace:prod',
+//
+//         'uglify:dist',
+//         'concat:renew',
+//         'jsObfuscate',
+//         'concat:renewToProd',
+//         'clean:renew',
+//         'cssmin',
+//         'linkAssetsBuildProd',
+//         'htmlmin',
+//         'phpmin',
+//         // 'hazy:php',
+//
+//         // // 'uncss',
+//         // 'php',
+//         // 'watch'
+//     ]);
+// };

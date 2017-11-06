@@ -10,19 +10,20 @@
  * For usage docs see:
  * 		https://github.com/gruntjs/grunt-contrib-less
  */
+var pipeline = require('../pipeline');
 module.exports = function(grunt) {
 
-	grunt.config.set('less', {
-		dev: {
-			files: [{
-				expand: true,
-				cwd: 'assets/styles/',
-				src: ['importer.less'],
-				dest: 'docs/styles/',
-				ext: '.css'
-			}]
-		}
-	});
+    grunt.config.set('less', {
+        dev: {
+            files: [{
+                expand: true,
+                cwd: 'assets/styles/',
+                src: ['importer.less'],
+                dest: pipeline.temporalFolder + '/styles/',
+                ext: '.css'
+            }]
+        }
+    });
 
-	grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-less');
 };

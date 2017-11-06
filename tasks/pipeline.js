@@ -8,9 +8,9 @@
  * for matching multiple files.)
  */
 
- var temporalFolder = 'docs';
+var temporalFolder = 'docs';
 
- module.exports.temporalFolder = temporalFolder;
+module.exports.temporalFolder = temporalFolder;
 
 // CSS files to inject in order
 //
@@ -26,7 +26,7 @@ var cssFiles = {
         'bower_components/fullpage.js/dist/jquery.fullpage.min.css',
         'bower_components/animate.css/animate.css',
         'bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.css',
-        '/bower_components/textangular/dist/textAngular.css',
+        'bower_components/textangular/dist/textAngular.css',
 
         'css/font.css',
         'css/app.css'
@@ -36,10 +36,13 @@ var cssFiles = {
 // Client-side javascript files to inject in order
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFiles = {
-    inject: [],
+    inject: [
+        'bower_components/jquery/dist/jquery.min.js',
+        // 'js/jquery.min.js', //  --------------- > > > renewMe.js NEEDS JQUERY
+        'js/renewMe.js'
+    ],
     concat: [
         // jQuery
-        'bower_components/jquery/dist/jquery.min.js',
         'bower_components/jquery-slimscroll/jquery.slimscroll.min.js',
         'bower_components/fullpage.js/dist/jquery.fullpage.js',
 
@@ -78,7 +81,6 @@ var jsFiles = {
         'js/directives/ui-toggleclass.js',
         'js/controllers/bootstrap.js',
         'js/app/music/ctrl.js',
-        'js/renewMe.js'
         // Lazy loading
 
         // Dependencies like jQuery, or Angular are brought in here
@@ -101,7 +103,8 @@ var jsFiles = {
 // templates get spit out to the same file.  Be sure and check out `tasks/README.md`
 // for information on customizing and installing new tasks.
 var templateFilesToInject = [
-    'templates/**/*.html'
+    'assets/*.html',
+    'assets/views/**/*.html'
 ];
 
 // Prefix relative paths to source files so they point to the proper locations
@@ -112,11 +115,11 @@ var templateFilesToInject = [
 // CSS FILES
 //
 module.exports.cssFilesToInject = cssFiles.inject.map(function(path) {
-    return 'docs/' + path;
+    return temporalFolder + '/' + path;
 });
 
 module.exports.cssFilesToConcat = cssFiles.concat.map(function(path) {
-    return 'docs/' + path;
+    return temporalFolder + '/' + path;
 });
 
 module.exports.cssFilesToConcatProd = cssFiles.concat.map(function(path) {
@@ -128,11 +131,11 @@ module.exports.cssFilesToConcatProd = cssFiles.concat.map(function(path) {
 // JS FILES
 //
 module.exports.jsFilesToInject = jsFiles.inject.map(function(path) {
-    return 'docs/' + path;
+    return temporalFolder + '/' + path;
 });
 
 module.exports.jsFilesToConcat = jsFiles.concat.map(function(path) {
-    return 'docs/' + path;
+    return temporalFolder + '/' + path;
 });
 
 module.exports.jsFilesToConcatProd = jsFiles.concat.map(function(path) {
@@ -142,14 +145,18 @@ module.exports.jsFilesToConcatProd = jsFiles.concat.map(function(path) {
 //
 // COPY FILES
 //
-var assetsFilesToCopy = ['**/*.!(coffee|less)'];
+var assetsFilesToCopy = ['**/*.!(coffee|less)', '**/.*'];
 jsFiles.concat.map(function(path) {
     assetsFilesToCopy.push('!' + path);
 });
+cssFiles.concat.map(function(path) {
+    assetsFilesToCopy.push('!' + path);
+});
+assetsFilesToCopy.push('!bower_components/**/*');
 
 module.exports.assetsFilesToCopy = assetsFilesToCopy;
 
-
+module.exports.stripBanners = true;
 var renewDomain = 'https://jonlov.github.io';
 module.exports.renewDomain = renewDomain;
 

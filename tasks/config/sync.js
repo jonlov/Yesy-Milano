@@ -4,13 +4,14 @@
  *
  * ---------------------------------------------------------------
  *
- * Synchronize files from the `assets` folder to `docs`,
+ * Synchronize files from the `assets` folder to `.tmp/public`,
  * smashing anything that's already there.
  *
  * For usage docs see:
  * 		https://github.com/tomusdrw/grunt-sync
  *
  */
+var pipeline = require('../pipeline');
 module.exports = function(grunt) {
 
 	grunt.config.set('sync', {
@@ -18,7 +19,7 @@ module.exports = function(grunt) {
 			files: [{
 				cwd: './assets',
 				src: ['**/*.!(coffee)'],
-				dest: 'docs'
+				dest: pipeline.temporalFolder
 			}]
 		}
 	});

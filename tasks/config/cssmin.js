@@ -3,11 +3,12 @@
  *
  * ---------------------------------------------------------------
  *
- * Minifies css files and places them into docs/min directory.
+ * Minifies css files and places them into .tmp/public/min directory.
  *
  * For usage docs see:
  * 		https://github.com/gruntjs/grunt-contrib-cssmin
  */
+var pipeline = require('../pipeline');
 module.exports = function(grunt) {
 
     grunt.config.set('cssmin', {
@@ -18,8 +19,8 @@ module.exports = function(grunt) {
                 'bower_components_personal/**/*.css',
                 'simple-line-icons/css/simple-line-icons.min.css'
             ],
-            dest: 'docs',
-            cwd: 'docs'
+            dest: pipeline.temporalFolder,
+            cwd: pipeline.temporalFolder
         }
     });
 

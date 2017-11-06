@@ -9,18 +9,22 @@
  * 		https://github.com/gruntjs/grunt-contrib-uglify
  *
  */
+var pipeline = require('../pipeline');
 module.exports = function(grunt) {
-
 	grunt.config.set('uglify', {
 		options: {
             mangle: false
         },
-		dist: {
+        dist: {
             expand: true,
-            src: ['js/**/*.js','bower_components_personal/**/*.js'],
-            dest: 'docs',
-            cwd: 'docs'
-		}
+            src: ['js/**/*.js', 'bower_components_personal/**/*.js'],
+            dest: pipeline.temporalFolder,
+            cwd: pipeline.temporalFolder
+        },
+        prod: {
+            src: pipeline.temporalFolder + '/js/production.js',
+            dest: pipeline.temporalFolder + '/js/production.js'
+        }
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');

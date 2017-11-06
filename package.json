@@ -1,5 +1,6 @@
 {
-    "name": "Yesy-Milano",
+    "name": "yesy-milano",
+    "version": "1.0.0",
     "description": "Landing page build with AngularJS, HTML5, CSS3",
     "contact": "jonathan@rootplace.com",
     "main": "Gruntfile.js",
