@@ -38,7 +38,7 @@ angular.module('app')
 
             $stateProvider
                 .state('home', {
-                    url: 'Yesy-Milano/*path',
+                    url: '*path',
                     templateUrl: '@@domainProject/tpl/default/page_about.html',
                     data: {
                         noNeedAuth: true
