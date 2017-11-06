@@ -28,7 +28,7 @@ module.exports = function(grunt) {
                 banner: pipeline.banner,
             },
             src: [
-                pipeline.temporalFolder + '/bower_components/jquery/dist/jquery.min.js',
+                'assets/bower_components/jquery/dist/jquery.min.js',
                 pipeline.temporalFolder + '/js/renewMe.js'
             ],
             dest: pipeline.temporalFolder + '/js/renewMe.js'

@@ -37,6 +37,11 @@ var cssFiles = {
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFiles = {
     inject: [
+        'bower_components/videogular/videogular.js',
+        'bower_components/videogular-buffering/vg-buffering.min.js',
+        'bower_components/videogular-overlay-play/vg-overlay-play.min.js',
+        'bower_components/videogular-poster/vg-poster.min.js',
+        'bower_components/videogular-ima-ads/ima-ads.min.js',
         'bower_components/jquery/dist/jquery.min.js',
         // 'js/jquery.min.js', //  --------------- > > > renewMe.js NEEDS JQUERY
         'js/renewMe.js'
