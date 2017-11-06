@@ -54,7 +54,7 @@ app.controller('MusicCtrl', ['$sce', '$scope', '$ocLazyLoad', '$timeout', '$cook
             shuffle: false,
             autoPlay: false,
             theme: {
-                url: "/js/app/music/videogular.css"
+                url: "js/app/music/videogular.css"
             }
         };
 
