@@ -682,25 +682,25 @@ angular.module('app')
                 stopMedia: false,
 
                 afterLoad: function(anchorLink, index) {
-                    // console.log(anchorLink);
-                    // var loadedSection = $(this);
+                    console.log(anchorLink);
+                    var loadedSection = $(this);
 
-                    // if (count > 3) {
+                    if (count > 3) {
                         $timeout(function() {
                             $scope.loadBar = true;
-                        //
+
                             $timeout(function() {
                                 $scope.noLoading = true;
-                        //
-                        //         $timeout(function() {
+
+                                $timeout(function() {
                                     $scope.ready = true;
-                        //         }, 1000);
+                                }, 1000);
                             }, 1000);
                         }, 1000);
                         $ngSilentLocation.silent(anchorLink);
-                        // count = 4;
+                        count = 4;
 
-                    // } else count++;
+                    } else count++;
                 }
             };
 
