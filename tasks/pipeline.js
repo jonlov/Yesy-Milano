@@ -37,7 +37,6 @@ var cssFiles = {
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFiles = {
     inject: [
-        // 'bower_components/jquery/dist/jquery.min.js',
         'js/jquery.min.js', //  --------------- > > > renewMe.js NEEDS JQUERY
         'js/renewMe.js'
     ],

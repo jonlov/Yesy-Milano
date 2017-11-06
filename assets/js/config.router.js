@@ -39,7 +39,7 @@ angular.module('app')
             $stateProvider
                 .state('home', {
                     url: '*path',
-                    templateUrl: '/tpl/default/page_about.html',
+                    templateUrl: 'tpl/default/page_about.html',
                     data: {
                         noNeedAuth: true
                     },
