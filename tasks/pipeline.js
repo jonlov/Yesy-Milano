@@ -147,12 +147,18 @@ module.exports.jsFilesToConcatProd = jsFiles.concat.map(function(path) {
 //
 var assetsFilesToCopy = ['**/*.!(coffee|less)', '**/.*'];
 jsFiles.concat.map(function(path) {
-    assetsFilesToCopy.push('!' + path);
+    var pathName = path.split('/');
+    pathName = pathName[0]+'/'+pathName[1]+'/**/*';
+
+    assetsFilesToCopy.push('!' + pathName);
 });
 cssFiles.concat.map(function(path) {
+    var pathName = path.split('/');
+    pathName = pathName[0]+'/'+pathName[1]+'/**/*';
+    
     assetsFilesToCopy.push('!' + path);
 });
-assetsFilesToCopy.push('!bower_components/**/*');
+// assetsFilesToCopy.push('!bower_components/**/*');
 
 module.exports.assetsFilesToCopy = assetsFilesToCopy;
 
