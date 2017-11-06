@@ -18,8 +18,8 @@ module.exports = function(grunt) {
 		dist: {
             expand: true,
             src: ['js/**/*.js','bower_components_personal/**/*.js'],
-            dest: '.tmp/public',
-            cwd: '.tmp/public'
+            dest: 'docs',
+            cwd: 'docs'
 		}
 	});
 

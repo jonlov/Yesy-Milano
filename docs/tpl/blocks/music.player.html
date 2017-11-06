@@ -1,0 +1,54 @@
+<div class="videogular-container">
+    <videogular vg-player-ready="onPlayerReady($API)" vg-complete="onComplete()" vg-theme="config.theme.url" class="videogular-container audio" vg-auto-play="config.autoPlay" vg-preload="'none'">
+        <vg-media vg-type="audio" vg-src="audios[active].sources"></vg-media>
+        <vg-controls>
+            <div class="bg-black-opacity r-3x" style="height: 40px;">
+                <vg-button ng-show="audios.length-1" ng-click="play('prev')"><i class="fa fa-backward"></i></vg-button>
+                <vg-play-pause-button></vg-play-pause-button>
+                <vg-button ng-show="audios.length-1" ng-click="play('next')"><i class="fa fa-forward"></i></vg-button>
+                <vg-scrub-bar>
+                    <vg-scrub-bar-current-time class="bg-primary" style="height: 4px"></vg-scrub-bar-current-time>
+                </vg-scrub-bar>
+                <vg-time-display class="h6">{{ currentTime | secondsToDate}} / {{ timeLeft | secondsToDate }}</vg-time-display>
+            </div>
+            <div class="bg-black-opacity r-3x m-t-md wrapper-md">
+                <div class="row m-n">
+                    <div class="col-md-5 no-padder">
+                        <vg-time-display class="hidden-xs m-n block" style="width: 50px;">
+                            <a class="pull-left">
+                                <img ng-src="{{ audios[active].poster }}" width="160px" />
+                            </a>
+                        </vg-time-display>
+                    </div>
+                    <div class="col-md-7 text-left no-padder">
+                        <div class="m-t-sm clear">
+                            <button ng-repeat="audio in audios" class="btn btn-link font-bold text-ellipsis" ng-click="play($index)">
+                                <i ng-show="active == $index" class="fa fa-volume-up"></i> {{$index+1}}. {{audio.title}}
+                                <a href="{{audio.download}}" ng-show="audio.download" class="text-lg">
+                                    <i class="fa fa-arrow-circle-o-down"></i>
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- <vg-time-display class="hidden-xs m-n" style="width: 50px;">
+                        <a class="pull-left thumb thumb-wrapper m-r">
+                            <img ng-src="{{ audios[active].poster }}" width="50px" />
+                        </a>
+                    </vg-time-display>
+                    <div class="clear">
+                        <vg-title ng-repeat="audio in audios">
+                            {{audio.title}}
+                        </vg-title>
+                    </div> -->
+                </div>
+                <!-- <vg-title>
+                    {{audios[active].title}}
+                </vg-title> -->
+            </div>
+            <!-- <vg-volume>
+                <vg-mute-button></vg-mute-button>
+                <vg-volume-bar></vg-volume-bar>
+            </vg-volume> -->
+        </vg-controls>
+    </videogular>
+</div>

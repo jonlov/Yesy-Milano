@@ -1,0 +1,66 @@
+<div class="modal-body">
+    <!-- navigation -->
+    <div class="lightbox-nav">
+        <!-- close button -->
+        <button class="close text-white" aria-hidden="true" ng-click="$dismiss()">×</button>
+    </div>
+    <div class="lightbox-image-container">
+        <div class="lightbox-image-caption">
+            <span>"{{Lightbox.title}}"</span>
+        </div>
+        <button class="close text-white arrow-left" ng-if="Lightbox.images.length > 1" ng-click="prevImage(pagination.currentPage)">
+            <img src="img/galery/arrow-before.png" height="75px">
+        </button>
+        <img ng-if="!Lightbox.isVideo(Lightbox.image)" lightbox-src="{{Lightbox.imageUrl}}" ng-swipe-left="nextImage(pagination.currentPage)" ng-swipe-right="prevImage(pagination.currentPage)">
+        <div ng-if="Lightbox.isVideo(Lightbox.image)" class="embed-responsive embed-responsive-16by9">
+            <embed-video ng-if="Lightbox.isSharedVideo(Lightbox.image)" lightbox-src="{{Lightbox.imageUrl}}" ng-href="{{Lightbox.imageUrl}}" iframe-id="lightbox-video" class="embed-responsive-item" autoplay="1">
+                <a ng-href="{{Lightbox.imageUrl}}">Watch video</a>
+            </embed-video>
+        </div>
+        <span class="pull-center h4 absolute" ng-show="Lightbox.loading" style="width: 70%;">
+            <div class="progress progress-xxs m-b-none" style="width:100%;">
+                <div class="progress-bar progress-bar-primary slow" data-toggle="tooltip" data-original-title="0%" ng-class="{'w-0 no-animation': !Lightbox.loadBar, 'w-90': Lightbox.loadBar == 90, 'quick w-full': Lightbox.loadBar == 100}"></div>
+            </div>
+        </span>
+        <button class="close text-white arrow-right" ng-if="Lightbox.images.length > 1" ng-click="nextImage(pagination.currentPage)">
+            <img src="img/galery/arrow-next.png" height="75px">
+        </button>
+    </div>
+    <div ng-if="!Lightbox.isVideo(Lightbox.image)">
+        <div class="row">
+            <div ng-repeat="image in Lightbox.images.slice(((pagination.currentPage-1)*pagination.itemsPerPage), ((pagination.currentPage)*pagination.itemsPerPage))" class="col-sm-2 col-xs-2">
+                <img src="{{image.url}}" ng-class="{'grayScale': image.url == Lightbox.imageUrl}" width="100%" ng-click="Lightbox.setImage($index + (pagination.itemsPerPage*(pagination.currentPage-1)));">
+            </div>
+            <pagination total-items="pagination.totalItems" ng-model="pagination.currentPage" ng-change="pageChanged()" class="pagination-sm" items-per-page="pagination.itemsPerPage"></pagination>
+            <script id="template/pagination/pagination.html" type="text/ng-template">
+                <ul class="pagination">
+                    <button ng-if="directionLinks || boundaryLinks" ng-class="{disabled: noPrevious()}" class="close text-white arrow-left" ng-click="selectPage(page - 1)" style="left: -28px; margin-top: 188px;">
+                        <img src="img/galery/arrow-before.png" height="23px">
+                    </button>
+                    <button ng-if="directionLinks || boundaryLinks" ng-class="{disabled: noNext()}" class="close text-white arrow-right" ng-click="selectPage(page + 1)" style="right: -28px; margin-top: 188px;">
+                        <img src="img/galery/arrow-next.png" height="23px">
+                    </button>
+                </ul>
+            </script>
+        </div>
+    </div>
+    <!-- <div class="lightbox-image-container"> -->
+    <!-- caption -->
+    <!-- <div class="lightbox-image-caption">
+            <span>{{Lightbox.imageCaption}}</span>
+        </div> -->
+    <!-- image -->
+    <!-- <img ng-if="!Lightbox.isVideo(Lightbox.image)" lightbox-src="{{Lightbox.imageUrl}}"> -->
+    <!-- video -->
+    <!-- <div ng-if="Lightbox.isVideo(Lightbox.image)" class="embed-responsive embed-responsive-16by9"> -->
+    <!-- video file embedded directly -->
+    <!-- <video ng-if="!Lightbox.isSharedVideo(Lightbox.image)" lightbox-src="{{Lightbox.imageUrl}}" controls autoplay="true">
+            </video> -->
+    <!-- video embedded with an external service using
+           `ng-videosharing-embed` -->
+    <!-- <embed-video ng-if="Lightbox.isSharedVideo(Lightbox.image)" lightbox-src="{{Lightbox.imageUrl}}" ng-href="{{Lightbox.imageUrl}}" iframe-id="lightbox-video" class="embed-responsive-item">
+                <a ng-href="{{Lightbox.imageUrl}}">Watch video</a>
+            </embed-video>
+        </div> -->
+    <!-- </div> -->
+</div>

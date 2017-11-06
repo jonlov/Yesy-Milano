@@ -26,15 +26,15 @@ module.exports = function(grunt) {
             files: [{
                     expand: true,
                     src: ['tpl/**/*.ejs', 'tpl/**/*.html'],
-                    dest: '.tmp/public',
-                    cwd: '.tmp/public'
+                    dest: 'docs',
+                    cwd: 'docs'
                 }]
-                // files: { 
+                // files: {
                 //     // 'tpl/app_calendar.html': 'src/index.html'
                 //         // expand: true,
                 //         src: ['tpl/**/*.html'],
-                //         dest: '.tmp/public',
-                //         cwd: '.tmp/public'
+                //         dest: 'docs',
+                //         cwd: 'docs'
                 // }
         }
     });

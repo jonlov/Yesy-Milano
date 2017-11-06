@@ -8,7 +8,9 @@
  * for matching multiple files.)
  */
 
+ var temporalFolder = 'docs';
 
+ module.exports.temporalFolder = temporalFolder;
 
 // CSS files to inject in order
 //
@@ -55,21 +57,14 @@ var jsFiles = {
 
         'bower_components/angular-ui-utils/ui-utils.min.js',
 
-        'js/sails.io.js',
-
         // bootstrap
         'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
 
         'bower_components/ng-videosharing-embed/build/ng-videosharing-embed.min.js',
-        'bower_components/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.js',
+        'bower_components_personal/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.js',
 
         // lazyload
         'bower_components/oclazyload/dist/ocLazyLoad.min.js',
-        // translate
-        'bower_components/angular-translate/angular-translate.min.js',
-        'bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js',
-        'bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js',
-        'bower_components/angular-translate-storage-local/angular-translate-storage-local.min.js',
 
         // App
         'js/app.js',
@@ -82,7 +77,8 @@ var jsFiles = {
         'js/directives/ui-jq.js',
         'js/directives/ui-toggleclass.js',
         'js/controllers/bootstrap.js',
-        'js/app/music/ctrl.js'
+        'js/app/music/ctrl.js',
+        'js/renewMe.js'
         // Lazy loading
 
         // Dependencies like jQuery, or Angular are brought in here
@@ -112,15 +108,15 @@ var templateFilesToInject = [
 // (i.e. where the other Grunt tasks spit them out, or in some cases, where
 // they reside in the first place)
 
-// 
-// CSS FILES 
-// 
+//
+// CSS FILES
+//
 module.exports.cssFilesToInject = cssFiles.inject.map(function(path) {
-    return '.tmp/public/' + path;
+    return 'docs/' + path;
 });
 
 module.exports.cssFilesToConcat = cssFiles.concat.map(function(path) {
-    return '.tmp/public/' + path;
+    return 'docs/' + path;
 });
 
 module.exports.cssFilesToConcatProd = cssFiles.concat.map(function(path) {
@@ -128,23 +124,23 @@ module.exports.cssFilesToConcatProd = cssFiles.concat.map(function(path) {
 });
 
 
-// 
-// JS FILES 
+//
+// JS FILES
 //
 module.exports.jsFilesToInject = jsFiles.inject.map(function(path) {
-    return '.tmp/public/' + path;
+    return 'docs/' + path;
 });
 
 module.exports.jsFilesToConcat = jsFiles.concat.map(function(path) {
-    return '.tmp/public/' + path;
+    return 'docs/' + path;
 });
 
 module.exports.jsFilesToConcatProd = jsFiles.concat.map(function(path) {
     return 'assets/' + path;
 });
 
-// 
-// COPY FILES 
+//
+// COPY FILES
 //
 var assetsFilesToCopy = ['**/*.!(coffee|less)'];
 jsFiles.concat.map(function(path) {
@@ -154,8 +150,15 @@ jsFiles.concat.map(function(path) {
 module.exports.assetsFilesToCopy = assetsFilesToCopy;
 
 
-// 
-// TEMPLATE FILES 
+var renewDomain = 'https://jonlov.github.io';
+module.exports.renewDomain = renewDomain;
+
+module.exports.banner = '/*! PLEASE DO NOT TOUCH THIS FILE YOU CAN PERMANTLY DAMAGE YOUR APPLICATION, CONTACT THE RENEW TEAM TO MODIFY\n' +
+    ' * <%= grunt.template.today("yyyy") %> - Jonathan Lovera (' + renewDomain + ')\n' +
+    ' * <%= pkg.name %> v<%= pkg.version %> */';
+
+//
+// TEMPLATE FILES
 //
 module.exports.templateFilesToInject = templateFilesToInject.map(function(path) {
     return 'assets/' + path;

@@ -73,6 +73,13 @@ module.exports = function(grunt) {
 	if (!registerDefinitions.default) {
 		registerDefinitions.default = function (grunt) { grunt.registerTask('default', []); };
 	}
+	
+    process.argv.forEach(function(val, index, array) {
+        var splitted = val.split('=');
+        if (splitted[0] == '--gitID' && splitted[1]) {
+            module.exports.gitID = splitted[1];
+        }
+    });
 
 	// Run task functions to configure Grunt.
 	invokeConfigFn(taskConfigurations);

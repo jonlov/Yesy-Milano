@@ -3,7 +3,7 @@
  *
  * ---------------------------------------------------------------
  *
- * Minifies css files and places them into .tmp/public/min directory.
+ * Minifies css files and places them into docs/min directory.
  *
  * For usage docs see:
  * 		https://github.com/gruntjs/grunt-contrib-cssmin
@@ -18,8 +18,8 @@ module.exports = function(grunt) {
                 'bower_components_personal/**/*.css',
                 'simple-line-icons/css/simple-line-icons.min.css'
             ],
-            dest: '.tmp/public',
-            cwd: '.tmp/public'
+            dest: 'docs',
+            cwd: 'docs'
         }
     });
 

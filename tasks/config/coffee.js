@@ -4,7 +4,7 @@
  * ---------------------------------------------------------------
  *
  * Compiles coffeeScript files from `assest/js` into Javascript and places them into
- * `.tmp/public/js` directory.
+ * `docs/js` directory.
  *
  * For usage docs see:
  * 		https://github.com/gruntjs/grunt-contrib-coffee
@@ -22,13 +22,13 @@ module.exports = function(grunt) {
 				expand: true,
 				cwd: 'assets/js/',
 				src: ['**/*.coffee'],
-				dest: '.tmp/public/js/',
+				dest: 'docs/js/',
 				ext: '.js'
 			}, {
 				expand: true,
 				cwd: 'assets/js/',
 				src: ['**/*.coffee'],
-				dest: '.tmp/public/js/',
+				dest: 'docs/js/',
 				ext: '.js'
 			}]
 		}
