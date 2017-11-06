@@ -10,7 +10,7 @@ app.controller('MusicCtrl', ['$sce', '$scope', '$ocLazyLoad', '$timeout', '$cook
         'com.2fdevs.videogular.plugins.poster',
         'com.2fdevs.videogular.plugins.buffering'
     ]).then(function() {
-        $scope.playerTemplate = 'tpl/blocks/music.player.html';
+        $scope.playerTemplate = '@@domainProject/tpl/blocks/music.player.html';
 
         $scope.audios = [{
             title: 'Ya no quiero tu amor',
