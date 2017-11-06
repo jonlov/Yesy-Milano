@@ -148,14 +148,23 @@ module.exports.jsFilesToConcatProd = jsFiles.concat.map(function(path) {
 var assetsFilesToCopy = ['**/*.!(coffee|less)', '**/.*'];
 jsFiles.concat.map(function(path) {
     var pathName = path.split('/');
-    pathName = pathName[0]+'/'+pathName[1]+'/**/*';
+
+    if(pathName[0] == 'bower_components')
+        pathName = pathName[0]+'/'+pathName[1]+'/**/*';
+    else
+        pathName = path;
+
+    console.log(pathName)
 
     assetsFilesToCopy.push('!' + pathName);
 });
 cssFiles.concat.map(function(path) {
     var pathName = path.split('/');
-    pathName = pathName[0]+'/'+pathName[1]+'/**/*';
-    
+    if(pathName[0] == 'bower_components')
+        pathName = pathName[0]+'/'+pathName[1]+'/**/*';
+    else
+        pathName = path;
+
     assetsFilesToCopy.push('!' + path);
 });
 // assetsFilesToCopy.push('!bower_components/**/*');
