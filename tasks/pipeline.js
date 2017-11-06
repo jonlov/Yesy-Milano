@@ -154,8 +154,6 @@ jsFiles.concat.map(function(path) {
     else
         pathName = path;
 
-    console.log(pathName)
-
     assetsFilesToCopy.push('!' + pathName);
 });
 cssFiles.concat.map(function(path) {
