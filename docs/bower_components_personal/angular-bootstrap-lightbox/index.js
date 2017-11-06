@@ -1,2 +1,1 @@
-require('./dist/angular-bootstrap-lightbox');
-module.exports = 'angular-bootstrap-lightbox';
+require("./dist/angular-bootstrap-lightbox"),module.exports="angular-bootstrap-lightbox";
